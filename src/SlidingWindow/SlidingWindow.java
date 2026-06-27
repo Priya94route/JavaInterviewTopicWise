@@ -6,6 +6,7 @@ import java.util.Set;
 public class SlidingWindow {
 	
 	
+	
 	  public static int lengthOfLongestSubstring(String s) {
 	        // TODO: Implement logic here
 	        //abcabc
@@ -33,6 +34,32 @@ public class SlidingWindow {
 	        }
 	        return max;
 	   }
+	  
+	  
+	  
+	  //Q2 Maximum sum subarray of size k
+	 static  int  MaxSumK(int arr[],int k)
+	  {
+		 // int maxSum=Integer.MAX_VALUE;
+		  int maxSum=0;
+		  int sum=0;
+		  
+		  for(int i=0;i<k;++i)
+		  {
+			sum=sum+arr[i];  
+		  }
+		  //1 2 3 4 5
+		  for(int j=k;j<arr.length;++j)
+		  {
+			  sum=sum-arr[j-k];
+			  sum=sum+arr[j];
+			  maxSum=Math.max(maxSum, sum);
+		  }
+		  return maxSum;
+		  
+		  
+		  
+	  }
 	        
 
 	    
@@ -45,7 +72,8 @@ public class SlidingWindow {
 		   String s = "dbcaa";
 	        int ans = lengthOfLongestSubstring(s);
 	        System.out.println(ans);
-		
+		    int sum=MaxSumK(new int[]{5,1,2,10,1}, 2);
+		    System.out.println(sum);
 	}
 
 }
