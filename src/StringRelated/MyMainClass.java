@@ -182,6 +182,7 @@ public class MyMainClass {
 	  {
 		  
 		  char arr []=s1.toCharArray();
+		  //lets sort
 		  Arrays.sort(arr);
 	      String sortedS1=Arrays.toString(arr);
 	      System.out.println(sortedS1);

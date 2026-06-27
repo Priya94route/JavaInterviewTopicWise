@@ -109,6 +109,63 @@ public class MyMain {
 		return true;
 	}
 	
+	int reverseNumber(int n)
+	{   int rev=0;
+		while(n!=0)
+		{
+			int d=n%10;
+			rev=rev*10+d;
+			n=n/10;
+			
+		}
+		return rev;
+	}
+	
+	
+	//This version is my first thought
+	int [] numberStartingWith1(int arr[])
+	{ //123
+		int arr1[]=new int [arr.length];
+		int j=0;
+		for(int n:arr)
+		{
+			int startWith1=n;
+		while(n!=0)
+		{
+			if(n==1)
+				{arr1[j]=startWith1;
+				 j++;
+				}
+			n= n/10; 
+		}
+		
+		}
+		System.out.println(Arrays.toString(arr1));
+		return arr1;
+	}
+	
+	//Improvised Version
+	int [] numberStartingWith1_O(int arr[])
+	{ //123
+		int arr1[]=new int [arr.length];
+		int j=0;
+		for(int n:arr)
+		{
+			int startWith1=n;
+		while(n>=10)
+		{
+			
+			n= n/10; 
+		}
+		if(n==1)
+		{
+		arr1[j++]=startWith1;
+		//j++;
+		}
+		}
+		System.out.println(Arrays.toString(arr1));
+		 return Arrays.copyOf(arr1, j);
+	}
 	
 	
 	public static void main(String[] args) {
@@ -120,7 +177,9 @@ public class MyMain {
 	    int arr[] = {1,0,2,0,3,4,0};
 
 	    ob.moveZeroesToEnd(arr);
-		
+	   // ob.reverseNumber(123);
+	    System.out.println("reversed number is "+ob.reverseNumber(123));
+		System.out.println(ob.numberStartingWith1_O(new int []{11,12,13,33,98,121,212}));
 		
 	}
 
