@@ -189,6 +189,27 @@ public class MyMainClass {
 	      
 	  }
 	  
+	  //question asked in Vlink to reverse a string
+	  
+	  public static String reverseS(String s)
+	  {
+		  char arr[]=s.toCharArray();
+		  int l=0;
+		  int r=s.length()-1;
+		  while(l<r)
+		  {
+			   char temp=arr[l];
+			   arr[l]=arr[r];
+			   arr[r]=temp;
+			   l++;
+			   r--;
+		  }
+		  return new String(arr);
+		  
+		  
+		  
+	  }
+	  
 	  
 	  public static void main(String args[])
 	  {
@@ -203,6 +224,8 @@ public class MyMainClass {
 		int max=MyMainClass.longestSubstringwithoutRepeating("abcdajka");
 		System.out.println(max);
 		Runtime.getRuntime().availableProcessors(); 
+		
+		System.out.println("reverse string "+MyMainClass.reverseS("Priya"));
 		
 		
 		
